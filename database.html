@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-------------------------------------------Admin Page----------------------------->
+  <title>BrewCode Dashboard - Admin</title>
+   <link rel="icon" href="logo.png">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      background-color: #fff;
+    }
+
+    .sidebar {
+      width: 150px;
+      background-color: #f26c1d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 20px;
+      gap: 10px;
+    }
+
+    .sidebar img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+      border-radius: 20px;
+    }
+
+    .nav-btn {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ccc;
+      font-weight: bold;
+      cursor: pointer;
+    }
+   .nav-btn.active {
+    background-color: rgb(16, 189, 16);
+   }
+    .content {
+      flex: 1;
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #eee;
+    }
+
+    .back-btn {
+      padding: 10px 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .product-menu {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .product-card {
+      flex: 1;
+      padding: 20px;
+      background: #b8860b;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .product-card h3 {
+      font-family: cursive;
+      font-size: 1.5rem;
+      text-decoration: underline;
+    }
+
+    .product-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .product-card ul li {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    .product-card.price {
+      background: #5b3c0a;
+    }
+    .team-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <img src="logo.png" alt="Logo">
+    <button class="nav-btn" onclick="showSection('attendance')">Attendance</button>
+    <button class="nav-btn" onclick="showSection('products')">Products</button>
+    <button class="nav-btn" onclick="showSection('sales')">Sales</button>
+    <button class="nav-btn" onclick="showSection('stocks')">Stocks</button>
+    <button class="nav-btn active" onclick="showSection('history')">History</button>
+    <button class="nav-btn" onclick="showSection('about')">About</button>
+    <button class="nav-btn" onclick="showSection('services')">Services</button>
+  </div>
+
+  <div class="content">
+    <div id="stocks" class="section">
+      <h3>Stocks</h3>
+      <table>
+        <tr><th>STOCKS</th><th>QUANTITY</th><th>DATE RECEIVED</th><th>RECEIVING STAFF</th></tr>
+        <tr><td>CUPS</td><td>100PCS</td><td>04-30-2025</td><td>DARIL</td></tr>
+        <tr><td>BROWN SUGAR</td><td>10KG</td><td>04-30-2025</td><td>MICHAEL</td></tr>
+        <tr><td>CREAMER</td><td>25KG</td><td>05-01-2025</td><td>DARIL</td></tr>
+        <tr><td>FRUCTOSE</td><td>5GALLONS</td><td>05-01-2025</td><td>MICHAEL</td></tr>
+        <tr><td>PEARLS</td><td>20KG</td><td>05-02-2025</td><td>CHRIS</td></tr>
+        <tr><td>TEA LEAVES</td><td>10BAGS</td><td>05-02-2025</td><td>JERICHO</td></tr>
+      </table>
+    </div>
+
+    <div id="attendance" class="section">
+      <h3>Attendance</h3>
+      <table>
+        <tr><th>MONDAY</th><th>TUESDAY</th><th>WEDNESDAY</th><th>THURSDAY</th><th>FRIDAY</th><th>NAME</th></tr>
+        <tr><td>↗️</td><td>↗️</td><td></td><td></td><td>↗️</td><td>Sherwin</td></tr>
+        <tr><td>↗️</td><td></td><td>↗️</td><td>↗️</td><td></td><td>Daril</td></tr>
+        <tr><td></td><td>↗️</td><td></td><td></td><td>↗️</td><td>Jericho</td></tr>
+        <tr><td></td><td></td><td>↗️</td><td>↗️</td><td></td><td>Michael</td></tr>
+        <tr><td></td><td>↗️</td><td></td><td></td><td>↗️</td><td>Christoff</td></tr>
+      </table>
+    </div>
+    <div id="about" class="section">
+        <h3>About</h3>
+  <h1 style="text-align:center; font-size: 50px; font-weight: bold; background-color: black; color: whitesmoke;">Meet Our Team</h1>
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+    
+    <div style="display: flex; align-items: center; gap: 15px; border: 2px solid black; padding: 10px; width: 45%;">
+      <img src="echoo.jpg" alt="Jericho" style="width: 80px; height: 80px; border-radius: 50%;">
+      <div>
+        <strong>Cruz, Jericho O.</strong><br>
+        BSIS-1C<br>
+        cruzjericho85@gmail.com
+      </div>
+    </div>
+    
+    
+    <div style="display: flex; align-items: center; gap: 15px; border: 2px solid black; padding: 10px; width: 45%;">
+      <img src="michael.jpg" alt="Lance" style="width: 80px; height: 80px; border-radius: 50%;">
+      <div>
+        <strong>Guarte, Lance Michael</strong><br>
+        BSIS-1C<br>
+        khael.2715@gmail.com
+      </div>
+    </div>
+
+    
+    <div style="display: flex; align-items: center; gap: 15px; border: 2px solid black; padding: 10px; width: 45%;">
+      <img src="daril.jpg" alt="Daril" style="width: 90px; height: 90px; border-radius: 50%;">
+      <div>
+        <strong>Arnol, Daril T.</strong><br>
+        BSIS-1C<br>
+        darilarnol13@gmail.com
+      </div>
+    </div>
+
+    
+    <div style="display: flex; align-items: center; gap: 15px; border: 2px solid black; padding: 10px; width: 45%;">
+      <img src="sherwin.jpg" alt="Sherwin" style="width: 80px; height: 80px; border-radius: 50%;">
+      <div>
+        <strong>Agabin, Sherwin James</strong><br>
+        BSIS-1C<br>
+        sherwinjeyms@gmail.com
+      </div>
+    </div>
+
+    
+    <div style="display: flex; align-items: center; gap: 15px; border: 2px solid black; padding: 10px; width: 45%;">
+      <img src="chris.jpg" alt="Christoff" style="width: 90px; height: 90px; border-radius: 50%;">
+      <div>
+        <strong>Fulgencio, Christoff O.</strong><br>
+        BSIS-1C<br>
+        josephchristoff2@gmail.com
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="services" class="section"> 
+    <h3>Services</h3>
+  <div style="display: flex; justify-content: space-around; gap: 20px; margin-top: 20px; flex-wrap: wrap;"> 
+    <!---------------------------------------- Vision ------------------------------------------------>
+    <div style="flex: 1; min-width: 280px; max-width: 30%; border: 3px solid black;">
+      <div style="background-color: #30cfd0; color: white; font-weight: bold; font-size: 1.5em; padding: 10px; text-align: center; font-family: sans-serif;">Vision</div>
+      <div style="padding: 15px; font-weight: bold; font-family: sans-serif; text-align: center;">
+        <p>
+          Our vision is to be a cornerstone of the local coffee culture where passion for great coffee meets a commitment to sustainability, innovation, and community. We aspire to inspire meaningful connections, one cup at a time.
+        </p>
+      </div>
+    </div>
+
+    <!------------------------------------- Mission ----------------------------------------------------->
+    <div style="flex: 1; min-width: 280px; max-width: 30%; border: 3px solid black;">
+      <div style="background-color: #9b59b6; color: white; font-weight: bold; font-size: 1.5em; padding: 10px; text-align: center; font-family: sans-serif;">Mission</div>
+      <div style="padding: 15px; font-weight: bold; font-family: sans-serif; text-align: center;">
+        <p>
+          At Brew code, our mission is to serve exceptional coffee that brings people together. <br><br>
+          We are committed to sourcing high-quality beans, crafting every cup with care, and creating a warm, welcoming space for our community to connect, relax, and recharge.
+        </p>
+      </div>
+    </div>
+
+    <!-------------------------------- Core Values ----------------------->
+    <div style="flex: 1; min-width: 280px; max-width: 30%; border: 3px solid black;">
+      <div style="background-color: #b22222; color: white; font-weight: bold; font-size: 1.5em; padding: 10px; text-align: center; font-family: sans-serif;">Core Values</div>
+      <div style="padding: 15px; font-family: sans-serif; font-weight: bold;">
+        <p>☕ <strong>Quality First</strong><br>
+        We believe every cup of coffee should be memorable. That’s why we prioritize quality at every stage—from sourcing the finest beans to perfecting every brew.</p>
+
+        <p>🌍 <strong>Sustainability</strong><br>
+        We are committed to ethical sourcing and eco-conscious practices that support both people and the planet. Our choices reflect a deep respect for the environment and future generations.</p>
+
+        <p>🤝 <strong>Community Connection</strong><br>
+        We strive to be more than just a coffee shop—we’re a gathering place where people feel welcome, heard, and valued. Supporting our local community is at the heart of everything we do.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div id="history" class="section active">
+      <h3>History</h3>
+      <table>
+        <tr><th>TIME/DATE</th><th>AMOUNT</th><th>DESCRIPTION</th><th>PRODUCT</th></tr>
+        <tr><td>04-30-2025</td><td>29</td><td>CASH</td><td>MATCHA</td></tr>
+        <tr><td>04-30-2025</td><td>29</td><td>CASH</td><td>TARO</td></tr>
+        <tr><td>04-30-2025</td><td>29</td><td>CASH</td><td>OKINAWA</td></tr>
+        <tr><td>04-30-2025</td><td>29</td><td>CASH</td><td>WINTERMELON</td></tr>
+        <tr><td>04-30-2025</td><td>29</td><td>CASH</td><td>BLUEBERRY</td></tr>
+        <tr><td>04-30-2025</td><td>29</td><td>CASH</td><td>CHEESECAKE</td></tr>
+      </table>
+    </div>
+
+    <div id="sales" class="section">
+      <h3>Sales</h3>
+      <table>
+        <tr><th>Product Name</th><th>Add-ons</th><th>Price</th><th>Date</th><th>Staff Name</th></tr>
+        <tr><td>Matcha</td><td>Marshmallow</td><td>$50</td><td>10-25-2025</td><td>Shiro</td></tr>
+        <tr><td>Americano</td><td>Croissant</td><td>$30</td><td>10-25-2025</td><td>Xyxx</td></tr>
+        <tr><td>Mocha</td><td>Sandwich</td><td>$45</td><td>10-25-2025</td><td>Nat</td></tr>
+        <tr><td>Iced Latte</td><td>Bagel</td><td>$50</td><td>10-25-2025</td><td>Grooft</td></tr>
+        <tr><td>Cappuccino</td><td>Scones</td><td>$35</td><td>10-25-2025</td><td>Kharma</td></tr>
+        <tr><td>Thai Latte</td><td>Muffin</td><td>$50</td><td>10-25-2025</td><td>Arturo</td></tr>
+      </table>
+    </div>
+
+    <div id="products" class="section">
+      <h3>Products</h3>
+      <div class="product-menu">
+        <div class="product-card">
+          <h3>Menu - Coffee</h3>
+          <ul>
+            <li>Matcha - $50</li>
+            <li>Americano - $30</li>
+            <li>Mocha - $45</li>
+            <li>Iced Latte - $50</li>
+            <li>Cappuccino - $35</li>
+            <li>Thai Latte - $50</li>
+          </ul>
+        </div>
+        <div class="product-card price">
+          <h3>Add-ons</h3>
+          <ul>
+            <li>Marshmallow - $2</li>
+            <li>Croissant - $4</li>
+            <li>Sandwich - $4</li>
+            <li>Bagel - $2</li>
+            <li>Scones - $3</li>
+            <li>Muffin - $3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <button class="back-btn" onclick="back()">Logout</button>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      const index = ['attendance', 'products', 'sales', 'stocks', 'history', 'about', 'services'].indexOf(id);
+      document.querySelectorAll('.nav-btn')[index].classList.add('active');
+    }
+    function back() {
+        window.location.href="login.html"
+    }
+  </script>
+</body>
+</html>

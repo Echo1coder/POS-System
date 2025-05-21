@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Report-Staff</title>
+   <link rel="icon" href="logo.png">
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: white;
+    }
+
+    header {
+      background-color: #f57c00;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      height: 100px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+    }
+
+    .tabs button {
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .sales { background-color: limegreen; color: white; }
+    .product { background-color: grey; color: white; }
+
+    .product:hover {
+        background-color: limegreen;
+    }
+    .back-btn {
+      background-color: red;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 2px solid black;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+
+    th {
+      background-color: white;
+      font-weight: bold;
+    }
+    a {
+        text-decoration: none;
+        color: whitesmoke;
+    }
+    input {
+        border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Logo" class="logo">
+    <div class="tabs">
+      <button class="sales">Sales</button>
+      <button class="product"><a href="database2.html">Product</a></button>
+    </div>
+    <button class="back-btn" onclick="back()">Logout</button>
+  </header>
+
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Add-ons</th>  
+          <th>Price</th>
+          <th>Date</th>
+          <th>Staff Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Matcha</td>
+          <td>Marshmallow</td>
+          <td>$50</td>
+          <td>10-25-2025</td>
+          <td>Shiro</td>
+        </tr>
+        <tr>
+          <td>Americano</td>
+          <td>Croissant</td>
+          <td>$30</td>
+          <td>10-25-2025</td>
+          <td>Xyxx</td>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <script>
+    function back() {
+        window.location.href="login.html"
+    }
+  </script>
+</body>
+</html>
